@@ -531,28 +531,44 @@ kbd {
 }
 
 .campus-card {
-  padding: var(--space-xl) var(--space-2xl);
   background: var(--bg-secondary);
   border-radius: 16px;
   border: 2px solid var(--bg-tertiary);
-  min-width: 280px;
+  min-width: 320px;
+  overflow: hidden;
+}
+
+.campus-photo {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.campus-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.campus-info {
+  padding: var(--space-lg) var(--space-xl);
 }
 
 .campus-card h3 {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   font-weight: 700;
   color: var(--accent-bright);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .campus-year {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-tertiary);
   margin-bottom: var(--space-sm);
 }
 
 .campus-students {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: var(--space-xs);
@@ -570,20 +586,42 @@ kbd {
   background: var(--bg-secondary);
   border-radius: 16px;
   border: 2px solid var(--accent);
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   text-align: left;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.alumni-photo {
+  flex-shrink: 0;
+  width: 220px;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid var(--accent);
+}
+
+.alumni-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.alumni-info {
+  flex: 1;
 }
 
 .alumni-name {
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--accent-bright);
   margin-bottom: var(--space-sm);
 }
 
 .alumni-title {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   color: var(--text-secondary);
   margin-bottom: var(--space-lg);
   font-weight: 500;
@@ -591,7 +629,7 @@ kbd {
 
 .alumni-achievements {
   list-style: none;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   color: var(--text-primary);
 }
 
@@ -611,6 +649,46 @@ kbd {
   height: 8px;
   background: var(--gold);
   border-radius: 50%;
+}
+
+/* Alumni Grid Slide (multiple alumni) */
+.alumni-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.alumni-grid-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--bg-tertiary);
+  text-align: left;
+}
+
+.alumni-grid-item .alumni-photo {
+  width: 80px;
+  height: 80px;
+  border-width: 2px;
+}
+
+.alumni-grid-item .alumni-info {
+  flex: 1;
+}
+
+.alumni-grid-item .alumni-name {
+  font-size: 1.35rem;
+  margin-bottom: var(--space-xs);
+}
+
+.alumni-grid-item .alumni-title {
+  font-size: 1rem;
+  margin-bottom: 0;
 }
 
 /* Contact Slide */
