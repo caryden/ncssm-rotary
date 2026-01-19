@@ -293,19 +293,15 @@ kbd {
   margin-bottom: var(--space-xl);
 }
 
-.slide-title .logo-text {
-  font-size: 5rem;
-  font-weight: 800;
-  color: var(--accent-bright);
-  letter-spacing: 0.15em;
-  margin-bottom: var(--space-sm);
+.slide-title .logo-svg {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  filter: brightness(0) invert(1); /* Make white on dark background */
 }
 
-.slide-title .logo-tagline {
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--text-secondary);
-  letter-spacing: 0.05em;
+.slide-title .logo-svg.small {
+  max-width: 350px;
 }
 
 .slide-title .subtitle {
@@ -618,11 +614,15 @@ kbd {
 }
 
 /* Contact Slide */
-.slide-contact .ncssm-logo .logo-text {
-  font-size: 4rem;
-  font-weight: 800;
-  color: var(--accent-bright);
-  letter-spacing: 0.15em;
+.slide-contact .ncssm-logo .logo-svg {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.slide-contact .ncssm-logo .logo-svg.small {
+  max-width: 300px;
 }
 
 .slide-contact .thank-you {
