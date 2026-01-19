@@ -85,5 +85,5 @@ window.NARRATION_SCRIPTS = {
 
   23: `For over forty-five years, we've been investing in North Carolina's brightest minds. We're proud of what our students and alumni accomplish, and grateful for the state's continued support.`,
 
-  24: `Thank you for your time today. I'm happy to answer any questions about NCSSM. You can learn more at w w w dot n c s s m dot e d u.`
+  24: `Thank you for your time today. I'm happy to answer any questions about NCSSM. You can learn more at n c s s m dot e d u.`
 };
