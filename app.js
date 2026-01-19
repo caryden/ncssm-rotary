@@ -62,6 +62,11 @@
     state.currentSlide = slideNumber;
     updateCounter();
     updateChapterNav();
+
+    // Notify narration system of slide change
+    if (typeof window.Narration !== 'undefined' && window.Narration.onSlideChange) {
+      window.Narration.onSlideChange(slideNumber);
+    }
   }
 
   function nextSlide() {
@@ -170,6 +175,13 @@
         e.preventDefault();
         toggleSidebar();
         break;
+      case 'v':
+      case 'V':
+        e.preventDefault();
+        if (typeof window.Narration !== 'undefined') {
+          window.Narration.toggle();
+        }
+        break;
       case 'Home':
         e.preventDefault();
         goToSlide(1);
@@ -237,6 +249,17 @@
 
     console.log('NCSSM Rotary Presentation initialized');
   }
+
+  // Export Presentation API for narration system
+  window.Presentation = {
+    goToSlide: goToSlide,
+    getState: function() {
+      return {
+        currentSlide: state.currentSlide,
+        totalSlides: state.totalSlides
+      };
+    }
+  };
 
   // Export state for debugging
   window.presentationState = state;
