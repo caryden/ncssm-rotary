@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NCSSM — North Carolina School of Science and Mathematics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Georgia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Sidebar Navigation -->
+  <nav id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">NCSSM</div>
+    </div>
+    <ul class="chapter-list">
+      <li class="nav-item" data-chapter="1">
+        <span class="chapter-number">01</span>
+        <span class="chapter-title">Welcome</span>
+      </li>
+      <li class="nav-item" data-chapter="2">
+        <span class="chapter-number">02</span>
+        <span class="chapter-title">Our Story</span>
+      </li>
+      <li class="nav-item" data-chapter="3">
+        <span class="chapter-number">03</span>
+        <span class="chapter-title">By the Numbers</span>
+      </li>
+      <li class="nav-item" data-chapter="4">
+        <span class="chapter-number">04</span>
+        <span class="chapter-title">Programs</span>
+      </li>
+      <li class="nav-item" data-chapter="5">
+        <span class="chapter-number">05</span>
+        <span class="chapter-title">Success</span>
+      </li>
+      <li class="nav-item" data-chapter="6">
+        <span class="chapter-number">06</span>
+        <span class="chapter-title">Impact</span>
+      </li>
+      <li class="nav-item" data-chapter="7">
+        <span class="chapter-number">07</span>
+        <span class="chapter-title">Alumni</span>
+      </li>
+      <li class="nav-item" data-chapter="8">
+        <span class="chapter-number">08</span>
+        <span class="chapter-title">Close</span>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Sidebar Toggle Button -->
+  <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <!-- Slide Counter -->
+  <div id="slide-counter" class="slide-counter">
+    <span id="current-slide">1</span>/<span id="total-slides">24</span>
+  </div>
+
+  <!-- Keyboard Hints -->
+  <div id="keyboard-hints" class="keyboard-hints">
+    <span><kbd>&larr;</kbd><kbd>&rarr;</kbd> Navigate</span>
+    <span><kbd>1</kbd>-<kbd>8</kbd> Chapters</span>
+  </div>
+
+  <!-- Main Presentation Container -->
+  <main id="presentation" class="presentation">
+
+    <!-- ============================================ -->
+    <!-- CHAPTER 1: WELCOME (Slides 1-2) -->
+    <!-- ============================================ -->
+
+    <!-- Slide 1: Title -->
+    <section class="slide slide-title" data-chapter="1" data-slide="1">
+      <div class="slide-content">
+        <div class="ncssm-logo">
+          <div class="logo-text">NCSSM</div>
+          <div class="logo-tagline">North Carolina School of Science and Mathematics</div>
+        </div>
+        <h2 class="subtitle">Downtown Durham Rotary Club</h2>
+        <p class="date">January 2026</p>
+      </div>
+    </section>
+
+    <!-- Slide 2: Mission -->
+    <section class="slide slide-statement" data-chapter="1" data-slide="2">
+      <div class="slide-content">
+        <h1 class="statement">To advance our state, nation, and world by creating opportunities for exemplary public education.</h1>
+        <p class="secondary-text">Our Mission</p>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CHAPTER 2: OUR STORY (Slides 3-5) -->
+    <!-- ============================================ -->
+
+    <!-- Slide 3: Founding -->
+    <section class="slide slide-two-part" data-chapter="2" data-slide="3">
+      <div class="slide-content">
+        <h1 class="primary-text">America's First Public Residential STEM High School</h1>
+        <p class="secondary-text">Founded in 1980 by Governor Jim Hunt, Senator Terry Sanford, and author John Ehle</p>
+        <p class="tertiary-text">Their vision: invest in North Carolina's human and intellectual capital</p>
+      </div>
+    </section>
+
+    <!-- Slide 4: Model for the Nation -->
+    <section class="slide slide-statement" data-chapter="2" data-slide="4">
+      <div class="slide-content">
+        <h1 class="big-number">18</h1>
+        <p class="number-context">similar schools worldwide have been modeled after NCSSM</p>
+      </div>
+    </section>
+
+    <!-- Slide 5: UNC System -->
+    <section class="slide slide-two-part" data-chapter="2" data-slide="5">
+      <div class="slide-content">
+        <h1 class="primary-text">The Only High School in the UNC System</h1>
+        <p class="secondary-text">Became the 17th institution of the University of North Carolina System in 2007</p>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CHAPTER 3: BY THE NUMBERS (Slides 6-9) -->
+    <!-- ============================================ -->
+
+    <!-- Slide 6: Two Campuses -->
+    <section class="slide slide-campuses" data-chapter="3" data-slide="6">
+      <div class="slide-content">
+        <h1 class="section-title">Two Campuses Serving All of North Carolina</h1>
+        <div class="campus-grid">
+          <div class="campus-card durham">
+            <h3>Durham</h3>
+            <p class="campus-year">Est. 1980</p>
+            <p class="campus-students">680 students</p>
+            <p class="campus-mascot">Unicorns</p>
+          </div>
+          <div class="campus-card morganton">
+            <h3>Morganton</h3>
+            <p class="campus-year">Est. 2022</p>
+            <p class="campus-students">300 students</p>
+            <p class="campus-mascot">Dragons</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 7: Total Students -->
+    <section class="slide slide-statement" data-chapter="3" data-slide="7">
+      <div class="slide-content">
+        <h1 class="big-number">3,500+</h1>
+        <p class="number-context">students served annually across all programs</p>
+        <p class="secondary-text">Residential, Online, and Outreach programs</p>
+      </div>
+    </section>
+
+    <!-- Slide 8: Free Education -->
+    <section class="slide slide-highlight" data-chapter="3" data-slide="8">
+      <div class="slide-content">
+        <h1 class="highlight-text">100% Free</h1>
+        <p class="highlight-subtext">No tuition. No room and board. No fees.</p>
+        <p class="secondary-text">Fully state-funded since 1980 — open to students from all 100 NC counties</p>
+      </div>
+    </section>
+
+    <!-- Slide 9: Admissions -->
+    <section class="slide slide-stats" data-chapter="3" data-slide="9">
+      <div class="slide-content">
+        <h1 class="section-title">Competitive Admission</h1>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">~2,000</span>
+            <span class="stat-label">applications annually</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24%</span>
+            <span class="stat-label">acceptance rate</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100</span>
+            <span class="stat-label">NC counties represented</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CHAPTER 4: PROGRAMS (Slides 10-12) -->
+    <!-- ============================================ -->
+
+    <!-- Slide 10: Residential Program -->
+    <section class="slide slide-list" data-chapter="4" data-slide="10">
+      <div class="slide-content">
+        <h1 class="list-title">Rigorous Two-Year Residential Program</h1>
+        <ul class="concept-list">
+          <li>Advanced STEM and humanities courses</li>
+          <li>Living-learning community environment</li>
+          <li>Research mentorships with Triangle universities</li>
+          <li>Athletics and extracurricular opportunities</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Slide 11: Research -->
+    <section class="slide slide-two-part" data-chapter="4" data-slide="11">
+      <div class="slide-content">
+        <h1 class="primary-text">Unmatched Research Opportunities</h1>
+        <p class="secondary-text">Students work alongside researchers at Duke, NC State, UNC-Chapel Hill, and RTI International</p>
+        <p class="tertiary-text accent">Over 100 professional mentors volunteer annually</p>
+      </div>
+    </section>
+
+    <!-- Slide 12: Statewide Programs -->
+    <section class="slide slide-list" data-chapter="4" data-slide="12">
+      <div class="slide-content">
+        <h1 class="list-title">Serving Students Across North Carolina</h1>
+        <ul class="concept-list">
+          <li><strong>NCSSM Online</strong> — Evening honors program for students at their local high school</li>
+          <li><strong>NCSSM Connect</strong> — Free AP and honors courses via video conference</li>
+          <li><strong>Summer Ventures</strong> — Free four-week summer program (40 years running)</li>
+          <li><strong>Professional Development</strong> — Free training for K-12 teachers statewide</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CHAPTER 5: SUCCESS (Slides 13-15) -->
+    <!-- ============================================ -->
+
+    <!-- Slide 13: National Ranking -->
+    <section class="slide slide-highlight" data-chapter="5" data-slide="13">
+      <div class="slide-content">
+        <h1 class="highlight-text">#1</h1>
+        <p class="highlight-subtext">Best Public High School in America</p>
+        <p class="secondary-text">Niche.com 2026 — Five consecutive years as #1 in North Carolina</p>
+      </div>
+    </section>
+
+    <!-- Slide 14: STEM Degrees -->
+    <section class="slide slide-stats" data-chapter="5" data-slide="14">
+      <div class="slide-content">
+        <h1 class="section-title">STEM Pipeline for North Carolina</h1>
+        <div class="stats-grid">
+          <div class="stat-item highlight">
+            <span class="stat-number">68%</span>
+            <span class="stat-label">earn STEM degrees</span>
+            <span class="stat-compare">3x national average</span>
+          </div>
+          <div class="stat-item highlight">
+            <span class="stat-number">55%</span>
+            <span class="stat-label">work in STEM fields</span>
+            <span class="stat-compare">4x national average</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 15: College Guarantee -->
+    <section class="slide slide-two-part" data-chapter="5" data-slide="15">
+      <div class="slide-content">
+        <h1 class="primary-text">Guaranteed Admission to Any UNC System School</h1>
+        <p class="secondary-text">All residential program graduates receive guaranteed admission plus four-year tuition grants</p>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CHAPTER 6: IMPACT (Slides 16-19) -->
+    <!-- ============================================ -->
+
+    <!-- Slide 16: Economic Impact -->
+    <section class="slide slide-statement" data-chapter="6" data-slide="16">
+      <div class="slide-content">
+        <h1 class="big-number">$1.34 Billion</h1>
+        <p class="number-context">annual economic contribution to North Carolina</p>
+      </div>
+    </section>
+
+    <!-- Slide 17: Alumni Retention -->
+    <section class="slide slide-stats" data-chapter="6" data-slide="17">
+      <div class="slide-content">
+        <h1 class="section-title">Investment That Stays in North Carolina</h1>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">54%</span>
+            <span class="stat-label">of alumni live and work in NC</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">$110K+</span>
+            <span class="stat-label">average alumni income</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">12,000+</span>
+            <span class="stat-label">graduates since 1980</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 18: Alumni Giving -->
+    <section class="slide slide-two-part" data-chapter="6" data-slide="18">
+      <div class="slide-content">
+        <h1 class="primary-text">$86 Million — Largest Campaign for a Public High School in America</h1>
+        <p class="secondary-text">8,400 donors supported the Ignite+Transform Campaign</p>
+        <p class="tertiary-text">Alumni contributed 46% of the total</p>
+      </div>
+    </section>
+
+    <!-- Slide 19: Where Alumni Work -->
+    <section class="slide slide-list" data-chapter="6" data-slide="19">
+      <div class="slide-content">
+        <h1 class="list-title">Top Employment Fields</h1>
+        <ul class="concept-list horizontal">
+          <li>Computer Science</li>
+          <li>Business</li>
+          <li>Education</li>
+          <li>Medicine</li>
+          <li>Engineering</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CHAPTER 7: NOTABLE ALUMNI (Slides 20-22) -->
+    <!-- ============================================ -->
+
+    <!-- Slide 20: Christina Koch -->
+    <section class="slide slide-alumni" data-chapter="7" data-slide="20">
+      <div class="slide-content">
+        <div class="alumni-card">
+          <h2 class="alumni-name">Christina Koch '97</h2>
+          <p class="alumni-title">NASA Astronaut</p>
+          <ul class="alumni-achievements">
+            <li>Record holder: longest spaceflight by a woman (328 days)</li>
+            <li>First all-female spacewalk</li>
+            <li>Selected for Artemis II — flying around the Moon in 2026</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 21: Rhiannon Giddens -->
+    <section class="slide slide-alumni" data-chapter="7" data-slide="21">
+      <div class="slide-content">
+        <div class="alumni-card">
+          <h2 class="alumni-name">Rhiannon Giddens '95</h2>
+          <p class="alumni-title">Grammy-Winning Musician</p>
+          <ul class="alumni-achievements">
+            <li>Two-time Grammy Award winner</li>
+            <li>2017 MacArthur "Genius Grant" recipient</li>
+            <li>2023 Pulitzer Prize winner for the opera "Omar"</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 22: More Alumni -->
+    <section class="slide slide-list" data-chapter="7" data-slide="22">
+      <div class="slide-content">
+        <h1 class="list-title">Leaders Across Every Field</h1>
+        <ul class="concept-list compact">
+          <li><strong>Maya Ajmera '85</strong> — President & CEO, Society for Science</li>
+          <li><strong>Adam Falk '83</strong> — President, Alfred P. Sloan Foundation</li>
+          <li><strong>Matt Welsh '92</strong> — Head of AI Systems, Palantir</li>
+          <li><strong>Chris Sembroski '97</strong> — SpaceX Inspiration4 astronaut</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CHAPTER 8: CLOSE (Slides 23-24) -->
+    <!-- ============================================ -->
+
+    <!-- Slide 23: Summary -->
+    <section class="slide slide-statement" data-chapter="8" data-slide="23">
+      <div class="slide-content">
+        <h1 class="statement">Investing in North Carolina's brightest minds for over 45 years.</h1>
+      </div>
+    </section>
+
+    <!-- Slide 24: Thank You -->
+    <section class="slide slide-contact" data-chapter="8" data-slide="24">
+      <div class="slide-content">
+        <div class="ncssm-logo">
+          <div class="logo-text">NCSSM</div>
+        </div>
+        <h2 class="thank-you">Thank You</h2>
+        <div class="contact-info">
+          <p><a href="https://www.ncssm.edu">www.ncssm.edu</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

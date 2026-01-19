@@ -1,0 +1,687 @@
+/* NCSSM Rotary Presentation — Styles
+   Optimized for readability by older audiences
+   ============================================== */
+
+/* CSS Variables - NCSSM Branding */
+:root {
+  /* NCSSM Colors */
+  --ncssm-blue: #003366;
+  --ncssm-blue-light: #0055a4;
+  --ncssm-blue-bright: #4a90d9;
+  --ncssm-gray: #58595b;
+  --ncssm-gray-light: #a7a9ac;
+
+  /* Backgrounds */
+  --bg-primary: #0a1628;
+  --bg-secondary: #0f2341;
+  --bg-tertiary: #1a3a5c;
+  --bg-card: #1e4a70;
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #b8c5d4;
+  --text-tertiary: #7a8fa6;
+  --text-dim: #4a6080;
+
+  /* Accents */
+  --accent: #4a90d9;
+  --accent-bright: #6bb3ff;
+  --accent-glow: rgba(74, 144, 217, 0.25);
+
+  /* Status */
+  --success: #28a745;
+  --success-dim: rgba(40, 167, 69, 0.2);
+  --warning: #ffc107;
+  --gold: #c9a227;
+
+  /* Typography - Large for readability */
+  --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Georgia', serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  /* Sizing */
+  --sidebar-width: 260px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px; /* Larger base for readability */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-display);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--bg-tertiary);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  transform: translateX(0);
+  transition: transform var(--transition-normal);
+}
+
+.sidebar.collapsed {
+  transform: translateX(calc(-1 * var(--sidebar-width)));
+}
+
+.sidebar-header {
+  padding: var(--space-lg);
+  border-bottom: 1px solid var(--bg-tertiary);
+  text-align: center;
+}
+
+.sidebar-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent-bright);
+  letter-spacing: 0.1em;
+}
+
+.chapter-list {
+  list-style: none;
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-md) 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  border-left: 4px solid transparent;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  color: var(--text-secondary);
+}
+
+.nav-item:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.nav-item.active {
+  background: var(--accent-glow);
+  color: var(--accent-bright);
+  border-left: 4px solid var(--accent);
+}
+
+.chapter-number {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.6;
+  min-width: 24px;
+}
+
+.chapter-title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Sidebar Toggle */
+.sidebar-toggle {
+  position: fixed;
+  top: var(--space-lg);
+  left: var(--space-lg);
+  width: 48px;
+  height: 48px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  z-index: 101;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar-toggle.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar-toggle:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+/* Slide Counter */
+.slide-counter {
+  position: fixed;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  background: var(--bg-secondary);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 6px;
+  border: 1px solid var(--bg-tertiary);
+  z-index: 100;
+}
+
+/* Keyboard Hints */
+.keyboard-hints {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  display: flex;
+  gap: var(--space-lg);
+  font-size: 0.875rem;
+  color: var(--text-dim);
+  z-index: 100;
+  opacity: 0.5;
+  transition: opacity var(--transition-fast);
+}
+
+.keyboard-hints:hover {
+  opacity: 1;
+}
+
+.keyboard-hints span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 8px;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--bg-card);
+  border-radius: 4px;
+  margin-right: 2px;
+}
+
+/* Main Presentation Area */
+.presentation {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  transition: left var(--transition-normal);
+}
+
+.presentation.expanded {
+  left: 0;
+}
+
+/* Slides */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(30px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow), visibility var(--transition-slow);
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.slide.prev {
+  transform: translateX(-30px);
+}
+
+.slide-content {
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ============================================ */
+/* SLIDE TYPES */
+/* ============================================ */
+
+/* Title Slide */
+.slide-title .ncssm-logo {
+  margin-bottom: var(--space-xl);
+}
+
+.slide-title .logo-text {
+  font-size: 5rem;
+  font-weight: 800;
+  color: var(--accent-bright);
+  letter-spacing: 0.15em;
+  margin-bottom: var(--space-sm);
+}
+
+.slide-title .logo-tagline {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+}
+
+.slide-title .subtitle {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-top: var(--space-xl);
+}
+
+.slide-title .date {
+  font-size: 1.25rem;
+  color: var(--text-tertiary);
+  margin-top: var(--space-md);
+}
+
+/* Statement Slide - Large readable text */
+.slide-statement .statement {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.3;
+  max-width: 950px;
+  margin: 0 auto;
+  color: var(--text-primary);
+}
+
+.slide-statement .secondary-text {
+  font-size: 1.5rem;
+  color: var(--accent-bright);
+  margin-top: var(--space-lg);
+  font-weight: 500;
+}
+
+/* Two-Part Slide */
+.slide-two-part .primary-text {
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: var(--space-lg);
+  color: var(--text-primary);
+}
+
+.slide-two-part .secondary-text {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.slide-two-part .tertiary-text {
+  font-size: 1.25rem;
+  color: var(--text-tertiary);
+  margin-top: var(--space-lg);
+}
+
+.slide-two-part .tertiary-text.accent {
+  color: var(--accent-bright);
+}
+
+/* Big Number Slide */
+.big-number {
+  font-size: 7rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--accent-bright), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-md);
+}
+
+.number-context {
+  font-size: 1.75rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* Highlight Slide */
+.slide-highlight .highlight-text {
+  font-size: 8rem;
+  font-weight: 800;
+  color: var(--accent-bright);
+  margin-bottom: var(--space-md);
+}
+
+.slide-highlight .highlight-subtext {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+}
+
+/* List Slide */
+.slide-list .list-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xl);
+  color: var(--text-primary);
+}
+
+.concept-list {
+  list-style: none;
+  font-size: 1.5rem;
+  text-align: left;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.concept-list li {
+  padding: var(--space-md) 0;
+  padding-left: var(--space-xl);
+  position: relative;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.concept-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.concept-list li strong {
+  color: var(--accent-bright);
+  font-weight: 600;
+}
+
+.concept-list.compact li {
+  font-size: 1.35rem;
+  padding: var(--space-sm) 0;
+  padding-left: var(--space-lg);
+}
+
+.concept-list.compact li::before {
+  width: 8px;
+  height: 8px;
+}
+
+.concept-list.horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-lg);
+  max-width: none;
+}
+
+.concept-list.horizontal li {
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--bg-tertiary);
+}
+
+.concept-list.horizontal li::before {
+  display: none;
+}
+
+/* Stats Grid */
+.slide-stats .section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xl);
+  color: var(--text-primary);
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-xl);
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--bg-tertiary);
+  min-width: 220px;
+}
+
+.stat-item.highlight {
+  background: var(--accent-glow);
+  border-color: var(--accent);
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--accent-bright);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-top: var(--space-sm);
+  text-align: center;
+}
+
+.stat-compare {
+  font-size: 0.95rem;
+  color: var(--success);
+  margin-top: var(--space-xs);
+  font-weight: 600;
+}
+
+/* Campus Grid */
+.slide-campuses .section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xl);
+  color: var(--text-primary);
+}
+
+.campus-grid {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+}
+
+.campus-card {
+  padding: var(--space-xl) var(--space-2xl);
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  border: 2px solid var(--bg-tertiary);
+  min-width: 280px;
+}
+
+.campus-card h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-bright);
+  margin-bottom: var(--space-md);
+}
+
+.campus-year {
+  font-size: 1.1rem;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-sm);
+}
+
+.campus-students {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.campus-mascot {
+  font-size: 1rem;
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+/* Alumni Slide */
+.slide-alumni .alumni-card {
+  padding: var(--space-xl);
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  border: 2px solid var(--accent);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.alumni-name {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--accent-bright);
+  margin-bottom: var(--space-sm);
+}
+
+.alumni-title {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+  font-weight: 500;
+}
+
+.alumni-achievements {
+  list-style: none;
+  font-size: 1.35rem;
+  color: var(--text-primary);
+}
+
+.alumni-achievements li {
+  padding: var(--space-sm) 0;
+  padding-left: var(--space-lg);
+  position: relative;
+}
+
+.alumni-achievements li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+/* Contact Slide */
+.slide-contact .ncssm-logo .logo-text {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--accent-bright);
+  letter-spacing: 0.15em;
+}
+
+.slide-contact .thank-you {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: var(--space-xl) 0;
+}
+
+.slide-contact .contact-info {
+  margin-top: var(--space-lg);
+}
+
+.slide-contact .contact-info p {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.slide-contact .contact-info a {
+  color: var(--accent-bright);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.slide-contact .contact-info a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Utility Classes */
+.accent {
+  color: var(--accent-bright);
+}
+
+.dim {
+  color: var(--text-dim);
+}
+
+/* Responsive - Even larger for projection */
+@media (min-width: 1920px) {
+  html {
+    font-size: 20px;
+  }
+
+  .slide-statement .statement {
+    font-size: 3.5rem;
+  }
+
+  .big-number {
+    font-size: 9rem;
+  }
+
+  .slide-highlight .highlight-text {
+    font-size: 10rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    font-size: 24px;
+  }
+}
